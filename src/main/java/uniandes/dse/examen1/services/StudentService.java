@@ -19,5 +19,11 @@ public class StudentService {
 
     public StudentEntity createStudent(StudentEntity newStudent) throws RepeatedStudentException {
         // TODO
+
+        if(!studentRepository.findByLogin(newStudent.getLogin()).isEmpty()){
+            throw new RepeatedStudentException("No puede haber estudiantes con login repetidos");
+        }
+
+        return studentRepository.save(newStudent);
     }
 }

@@ -40,4 +40,8 @@ public class CourseEntity {
      * No student should appear more than once in this list
      */
     // TODO
+
+    @PodamExclude
+    @ManyToMany
+    private List<StudentEntity> students = new ArrayList<>();
 }

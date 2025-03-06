@@ -38,9 +38,17 @@ public class StudentEntity {
      */
     // TODO
 
+    @PodamExclude
+    @ManyToMany
+    private List<RecordEntity> records = new ArrayList<>();
+
     /**
      * A list of all the courses that the student has ever taken. No course should
      * appear more than once in this list.
      */
     // TODO
+
+    @PodamExclude
+    @OneToMany
+    private List<CourseEntity> courses = new ArrayList<>();
 }
